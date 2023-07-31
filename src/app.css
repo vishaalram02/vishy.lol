@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.layout-md {
+		@apply max-w-screen-md mx-auto px-4;
+	}
+}
+
+html {
+	@apply motion-safe:scroll-smooth;
+}
+
+body {
+	@apply py-20;
+}

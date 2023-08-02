@@ -13,6 +13,13 @@
 			link: 'https://multimine.herokuapp.com'
 		},
 		{
+			name: 'vishy.lol',
+			emoji: '🐧',
+			tags: ['Sveltekit/JS', 'TailwindCSS'],
+			header: 'This website !!',
+			description: 'Woah where am I? My lightweight personal website powered by Svelte!'
+		},
+		{
 			name: 'multimine',
 			emoji: '💣',
 			tags: ['React/JS', 'Express', 'MongoDB', 'SocketIO'],

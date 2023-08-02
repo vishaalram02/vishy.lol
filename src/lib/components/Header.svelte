@@ -7,23 +7,23 @@
 		{ name: 'blog ✏️', href: '/blog' }
 	];
 	const socials = [
-		{ icon: 'envelope', href: 'mailto:vishr@mit.edu' },
-		{ icon: 'github', href: 'https://github.com/vishaalram02' },
-		{ icon: 'book', href: 'https://www.goodreads.com/user/show/135129343-vishaal-ram' },
-		{ icon: 'spotify', href: 'https://open.spotify.com/user/b1xck719vtjwh2saj01gxftku' }
+		{ icon: 'envelope', brand: false, href: 'mailto:vishr@mit.edu' },
+		{ icon: 'github', brand: true, href: 'https://github.com/vishaalram02' },
+		{
+			icon: 'book',
+			brand: false,
+			href: 'https://www.goodreads.com/user/show/135129343-vishaal-ram'
+		},
+		{
+			icon: 'spotify',
+			brand: true,
+			href: 'https://open.spotify.com/user/b1xck719vtjwh2saj01gxftku'
+		},
+		{ icon: 'strava', brand: true, href: 'https://www.strava.com/athletes/107723971' }
 	];
-	let pageTitle = null;
-	$: {
-		const link = links.find(({ href }) => href === $page.url.pathname);
-		if (link) {
-			pageTitle = link.name.charAt(0).toUpperCase() + link.name.slice(1);
-		} else {
-			pageTitle = null;
-		}
-	}
 </script>
 
-<header class="layout-md" data-sveltekit-noscroll>
+<header class="layout-md mb-10" data-sveltekit-noscroll>
 	<a href="/" class="text-4xl font-overfont">hi, i'm vishy 🐧</a>
 	<div class="flex justify-between items-start my-4">
 		<nav>
@@ -41,8 +41,9 @@
 			{#each socials as social (social)}
 				<a href={social.href} target="_blank">
 					<i
-						id={social.icon}
-						class="fa fa-{social.icon} hover:text-black transition-colors hover:cursor-pointer"
+						class="fa{social.brand
+							? 'b'
+							: ''} fa-{social.icon} hover:text-black transition-colors hover:cursor-pointer"
 					/>
 				</a>
 			{/each}
@@ -55,6 +56,6 @@
 		@apply flex items-start text-neutral-500 justify-end space-x-6 text-lg py-0.5;
 	}
 	.social {
-		@apply flex items-start text-neutral-500 space-x-4 text-lg;
+		@apply flex items-start text-neutral-500 space-x-4;
 	}
 </style>

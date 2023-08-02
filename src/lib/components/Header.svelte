@@ -2,14 +2,15 @@
 	import { page } from '$app/stores';
 
 	const links = [
-		{ name: 'projects', href: '/projects' },
-		{ name: 'blog', href: '/blog' },
-		{ name: 'classes', href: '/classes' }
+		{ name: 'projects 🧑‍💻', href: '/projects' },
+		{ name: 'classes 📚', href: '/classes' },
+		{ name: 'blog ✏️', href: '/blog' },
 	];
 	const socials = [
-		{ icon: 'envelope', color: 'red-500' },
-		{ icon: 'github', color: 'blue-500' },
-		{ icon: 'book', color: 'emerald-400' }
+		{ icon: 'envelope', href: 'mailto:vishr@mit.edu' },
+		{ icon: 'github', href: 'https://github.com/vishaalram02' },
+		{ icon: 'book', href: 'https://www.goodreads.com/user/show/135129343-vishaal-ram' },
+		{ icon: 'spotify', href: 'https://open.spotify.com/user/b1xck719vtjwh2saj01gxftku' }
 	];
 	let pageTitle = null;
 	$: {
@@ -23,10 +24,8 @@
 </script>
 
 <header class="layout-md" data-sveltekit-noscroll>
-	<div class="mb-3">
-		<a href="/" class="text-4xl">hi, i'm vishy</a>
-	</div>
-	<div class="flex justify-between items-start">
+	<a href="/" class="text-4xl">hi, i'm vishy 🐧</a>
+	<div class="flex justify-between items-start my-4">
 		<nav>
 			{#each links as link (link)}
 				<a
@@ -40,10 +39,12 @@
 		</nav>
 		<div class="social">
 			{#each socials as social (social)}
-				<i
-					id={social.icon}
-					class="fa fa-{social.icon} text-lg hover:text-purple-500 transition-colors hover:cursor-pointer"
-				/>
+				<a href={social.href} target="_blank">
+					<i
+						id={social.icon}
+						class="fa fa-{social.icon} hover:text-black transition-colors hover:cursor-pointer"
+					/>
+				</a>
 			{/each}
 		</div>
 	</div>
@@ -54,6 +55,6 @@
 		@apply flex items-start text-neutral-500 justify-end space-x-6 text-lg py-0.5;
 	}
 	.social {
-		@apply flex items-start space-x-4;
+		@apply flex items-start text-neutral-500 space-x-4 text-lg;
 	}
 </style>

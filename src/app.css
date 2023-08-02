@@ -9,7 +9,7 @@
 }
 
 html {
-	@apply motion-safe:scroll-smooth;
+	@apply motion-safe:scroll-smooth bg-violet-100;
 }
 
 body {

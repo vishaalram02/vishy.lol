@@ -5,7 +5,12 @@
 
 <div class="grid grid-cols-2 my-5">
 	<div class="pr-5">
-		<p class="text-2xl font-medium font-overflow">{data.emoji + ' ' + data.name}</p>
+		<a href={data.link} target="_blank">
+			<p class="group text-2xl font-medium font-overflow rounded-xl hover:bg-amber-100 px-3">
+				{data.emoji + ' ' + data.name}
+				<span class="font-sans text-neutral-500 group-hover:text-black">↗</span>
+			</p>
+		</a>
 		<div class="flex space-x-1 mt-1 mb-2">
 			{#each data.tags as tag (tag)}
 				<div class="bg-amber-100 text-xs rounded-xl px-2 py-px">{tag}</div>

@@ -10,14 +10,15 @@
 			header: 'A text-based image editor! (HTN 2022)',
 			description:
 				"Utilize the blended-diffusion model to selectively edit an image with a prompt. The model is deployed as a serverless webhook on the cloud using <a target='_blank' href='https://beam.cloud'>Beam</a>.",
-			link: 'https://multimine.herokuapp.com'
+			link: 'https://blendai.vishy.lol'
 		},
 		{
 			name: 'vishy.lol',
 			emoji: '🐧',
 			tags: ['Sveltekit/JS', 'TailwindCSS'],
 			header: 'This website !!',
-			description: 'Woah where am I? My lightweight personal website powered by Svelte!'
+			description: 'Woah where am I? My lightweight personal website powered by Svelte!',
+			link: 'https://vishy.lol'
 		},
 		{
 			name: 'multimine',
@@ -26,7 +27,7 @@
 			header: 'Minesweeper live !! (MIT Weblab 2022)',
 			description:
 				"The first webapp I've worked on : ) A realtime multiplayer minesweeper app that allows you to create game lobbies and race against your friends on the same board.",
-			link: 'https://vishy.lol'
+			link: 'https://multimine.vishy.lol'
 		},
 		{
 			name: 'bakery',
@@ -34,7 +35,8 @@
 			tags: ['Express'],
 			header: "Vishy's cookies? (HackMIT Puzzle 2023)",
 			description:
-				"A simple cross site scripting (XSS) challenge. Exploit a vulnerability in image upload to acquire Vishy's cookies! Submissions are automatically verified with a headless chromium browser."
+				"A simple cross site scripting (XSS) challenge. Exploit a vulnerability in image upload to acquire Vishy's cookies! Submissions are automatically verified with a headless chromium browser.",
+			link: 'https://bakery.vishy.lol'
 		}
 	];
 </script>

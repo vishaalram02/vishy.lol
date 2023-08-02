@@ -2,14 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	@font-face {
+		font-family: overfont;
+		size-adjust: 130%;
+		src: url(/fonts/LiveOverfont.woff) format('woff');
+	}
+	@font-face {
+		font-family: mabry;
+		src: url(/fonts/MabryPro-Regular.woff) format('woff');
+	}
+}
 @layer components {
 	.layout-md {
-		@apply max-w-screen-md mx-auto px-4;
+		@apply max-w-screen-md mx-auto px-4 font-mabry;
 	}
 }
 
 html {
-	@apply motion-safe:scroll-smooth bg-violet-100;
+	@apply motion-safe:scroll-smooth bg-amber-50;
 }
 
 body {

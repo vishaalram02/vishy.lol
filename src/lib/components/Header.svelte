@@ -4,7 +4,7 @@
 	const links = [
 		{ name: 'projects 🧑‍💻', href: '/projects' },
 		{ name: 'classes 📚', href: '/classes' },
-		{ name: 'blog ✏️', href: '/blog' },
+		{ name: 'blog ✏️', href: '/blog' }
 	];
 	const socials = [
 		{ icon: 'envelope', href: 'mailto:vishr@mit.edu' },
@@ -24,13 +24,13 @@
 </script>
 
 <header class="layout-md" data-sveltekit-noscroll>
-	<a href="/" class="text-4xl">hi, i'm vishy 🐧</a>
+	<a href="/" class="text-4xl font-overfont">hi, i'm vishy 🐧</a>
 	<div class="flex justify-between items-start my-4">
 		<nav>
 			{#each links as link (link)}
 				<a
 					href={link.href}
-					class="hover:text-black transition-colors"
+					class="hover:text-black transition-colors font-overfont"
 					class:text-black={$page.url.pathname === link.href}
 				>
 					{link.name}

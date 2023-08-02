@@ -21,9 +21,9 @@
 		<p class="text-weight-400 mb-2">{data.header}</p>
 		<p class="text-sm text-neutral-500 mb-2">{@html data.description}</p>
 
-			<a href="https://github.com/vishaalram02/{data.name}" target="_blank">
-				<p class="underline">Source</p>
-			</a>
+		<a href="https://github.com/vishaalram02/{data.name}" target="_blank">
+			<p class="underline">Source</p>
+		</a>
 	</div>
 	<div class="p-5">
 		<img class="rounded-md" alt={data.name} src={image} />

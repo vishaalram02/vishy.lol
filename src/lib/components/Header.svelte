@@ -7,8 +7,13 @@
 		{ name: 'blog ✏️', href: '/blog' }
 	];
 	const socials = [
-		{ icon: 'envelope', color: "text-sky-400", brand: false, href: 'mailto:vishr@mit.edu' },
-		{ icon: 'github', color: "text-gray-900", brand: true, href: 'https://github.com/vishaalram02' },
+		{ icon: 'envelope', color: 'text-sky-400', brand: false, href: 'mailto:vishr@mit.edu' },
+		{
+			icon: 'github',
+			color: 'text-gray-900',
+			brand: true,
+			href: 'https://github.com/vishaalram02'
+		},
 		{
 			icon: 'book',
 			color: 'text-rose-400',
@@ -21,7 +26,12 @@
 			brand: true,
 			href: 'https://open.spotify.com/user/b1xck719vtjwh2saj01gxftku'
 		},
-		{ icon: 'strava', color: 'text-orange-400', brand: true, href: 'https://www.strava.com/athletes/107723971' }
+		{
+			icon: 'strava',
+			color: 'text-orange-400',
+			brand: true,
+			href: 'https://www.strava.com/athletes/107723971'
+		}
 	];
 </script>
 

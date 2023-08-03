@@ -40,7 +40,7 @@
 			<div class="ml-10 text-lg">
 				<ul class="list-disc">
 					{#each subject.classes as course (course)}
-						<li>{course.name} <span class="float-right text-neutral-500">{course.number}</span></li>
+						<li>{course.name} <span class="float-right text-neutral-500 sm:hidden">{course.number}</span></li>
 					{/each}
 				</ul>
 			</div>

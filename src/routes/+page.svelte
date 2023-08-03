@@ -3,8 +3,8 @@
 </script>
 
 <div class="layout-md text-lg">
-	<div class="grid grid-cols-3">
-		<div class="col-span-2 mr-4 text-neutral-600 font-mabry">
+	<div class="grid grid-cols-3 sm:grid-cols-1 sm:space-y-3">
+		<div class="col-span-2 mr-4 text-neutral-600 font-mabry sm:col-span-1">
 			<p>
 				👋 I'm a junior at MIT studying mathematics and computer science. I'm interested in cloud
 				infrastructure and developing reliable and secure computer systems.

@@ -20,7 +20,7 @@
 			]
 		},
 		{
-			name: '🎨 Other',
+			name: '🎨 Humanities',
 			classes: [
 				{ name: 'Chinese I-V', number: '21G.101-21G.105' },
 				{ name: 'Chinese Calligraphy', number: '21G.111' },
@@ -35,13 +35,15 @@
 <section class="layout-md">
 	<p class="text-2xl mb-5">some of my favorite classes! 📚</p>
 	{#each courses as subject (subject)}
-		<p class="text-xl">{subject.name}</p>
-		<div class="ml-10 text-lg">
-			<ul class="list-disc">
-				{#each subject.classes as course (course)}
-					<li>{course.name} <span class="float-right text-neutral-500">{course.number}</span></li>
-				{/each}
-			</ul>
+		<div class="rounded-lg hover:bg-amber-100 p-2 transition-colors">
+			<p class="text-xl">{subject.name}</p>
+			<div class="ml-10 text-lg">
+				<ul class="list-disc">
+					{#each subject.classes as course (course)}
+						<li>{course.name} <span class="float-right text-neutral-500">{course.number}</span></li>
+					{/each}
+				</ul>
+			</div>
 		</div>
 	{/each}
 </section>

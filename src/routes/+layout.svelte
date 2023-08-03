@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<title>Vishaal Ram</title>
-	<meta name="description" content="Vishaal Ram's personal website!"/>
+	<meta name="description" content="Vishaal Ram's personal website!" />
 	<link
 		rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css"

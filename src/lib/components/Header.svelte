@@ -36,7 +36,12 @@
 </script>
 
 <header class="layout-md mb-10" data-sveltekit-noscroll>
-	<a href="/" class="text-4xl font-overfont">hi, i'm vishy <span class="inline-block transition ease-in-out duration-[2000ms] hover:rotate-[720deg]">🐧</span></a>
+	<a href="/" class="text-4xl font-overfont group"
+		>hi, i'm vishy <span
+			class="inline-block transition ease-in-out duration-[2000ms] group-hover:rotate-[720deg]"
+			>🐧</span
+		></a
+	>
 	<div class="flex justify-between items-start my-4">
 		<nav class="flex text-neutral-500 justify-end space-x-6 text-lg py-0.5">
 			{#each links as link (link)}

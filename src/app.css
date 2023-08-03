@@ -15,7 +15,7 @@
 }
 @layer components {
 	.layout-md {
-		@apply max-w-screen-md mx-auto px-4 font-mabry;
+		@apply max-w-[768px] mx-auto px-4 font-mabry;
 	}
 }
 

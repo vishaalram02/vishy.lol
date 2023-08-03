@@ -17,7 +17,7 @@
 			emoji: '🐧',
 			tags: ['Sveltekit/JS', 'TailwindCSS'],
 			header: 'This website !!',
-			description: 'Woah where am I? My lightweight personal website powered by Svelte!',
+			description: 'Woah where am I? My lightweight personal website powered by Svelte! No unnecessary packages and plugins needed :0',
 			link: 'https://vishy.lol'
 		},
 		{

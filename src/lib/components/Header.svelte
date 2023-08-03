@@ -38,7 +38,7 @@
 <header class="layout-md mb-10" data-sveltekit-noscroll>
 	<a href="/" class="text-4xl font-overfont">hi, i'm vishy 🐧</a>
 	<div class="flex justify-between items-start my-4">
-		<nav>
+		<nav class="flex items-start text-neutral-500 justify-end space-x-6 text-lg py-0.5">
 			{#each links as link (link)}
 				<a
 					href={link.href}
@@ -49,7 +49,7 @@
 				</a>
 			{/each}
 		</nav>
-		<div class="social">
+		<div class="flex items-start text-neutral-500 space-x-4">
 			{#each socials as social (social)}
 				<a href={social.href} target="_blank">
 					<i
@@ -62,12 +62,3 @@
 		</div>
 	</div>
 </header>
-
-<style lang="postcss">
-	nav {
-		@apply flex items-start text-neutral-500 justify-end space-x-6 text-lg py-0.5;
-	}
-	.social {
-		@apply flex items-start text-neutral-500 space-x-4;
-	}
-</style>

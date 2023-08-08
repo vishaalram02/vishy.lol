@@ -33,13 +33,31 @@
 			href: 'https://www.strava.com/athletes/107723971'
 		}
 	];
+
+	let rotation = 5;
+	$: {
+		switch ($page.url.pathname) {
+			case '/':
+				rotation = 360 * Math.round(rotation / 360) - 360 + 5;
+				break;
+			case '/projects':
+				rotation = 360 * Math.round(rotation / 360) - 360 - 5;
+				break;
+			case '/classes':
+				rotation = 360 * Math.round(rotation / 360) - 360 - 20;
+				break;
+			case '/blog':
+				rotation = 360 * Math.round(rotation / 360) - 360 - 110;
+				break;
+		}
+	}
 </script>
 
 <header class="layout-md mb-10" data-sveltekit-noscroll>
 	<a href="/" class="text-4xl font-overfont group"
 		>hi, i'm vishy <span
-			class="inline-block transition ease-in-out duration-[2000ms] group-hover:rotate-[720deg]"
-			>🐧</span
+			class="inline-block"
+			style="transform: rotate({rotation}deg); transition: transform 1.2s ease-in-out">🐧</span
 		></a
 	>
 	<div class="flex justify-between items-start my-4">

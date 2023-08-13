@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 
 	const links = [
-		{ name: 'projects 🧑‍💻', href: '/projects' },
+		{ name: 'projects 🌳', href: '/projects' },
 		{ name: 'classes 📚', href: '/classes' },
 		{ name: 'blog ✏️', href: '/blog' }
 	];

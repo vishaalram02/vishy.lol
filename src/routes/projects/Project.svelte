@@ -3,7 +3,7 @@
 	export let image;
 </script>
 
-<div class="grid grid-cols-2 my-5 sm:grid-cols-1">
+<div class="grid grid-cols-2 my-2 sm:grid-cols-1">
 	<div class="pr-5">
 		<a href={data.link} target="_blank">
 			<p

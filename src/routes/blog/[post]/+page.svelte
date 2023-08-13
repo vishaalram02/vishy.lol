@@ -20,7 +20,7 @@
 			return hljs.highlight(lang, code).value;
 		}
 	});
-	const url = `/src/lib/posts/${data.pathname.substring(6)}.md?raw`;
+	const url = `/static/posts/${data.pathname.substring(6)}.md?raw`;
 	let post;
 
 	onMount(async () => {

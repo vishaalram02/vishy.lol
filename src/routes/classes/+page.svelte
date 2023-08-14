@@ -3,6 +3,8 @@
 		{
 			name: '💻 Computer Science',
 			classes: [
+        { name: '[Fall 23] Operating Systems Engineering', number: '6.1810'},
+        { name: '[Fall 23] Software Performance Engineering', number: '6.1060'},
 				{ name: 'Distributed Systems', number: '6.5800' },
 				{ name: 'Computer Systems Engineering', number: '6.1800' },
 				{ name: 'Assembly and C', number: '6.1900' },

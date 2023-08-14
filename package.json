@@ -28,6 +28,7 @@
 	"type": "module",
 	"dependencies": {
 		"highlight.js": "^11.8.0",
-		"marked": "^7.0.2"
+		"marked": "^7.0.2",
+		"marked-highlight": "^2.0.4"
 	}
 }

@@ -25,7 +25,8 @@ Achieving the interactivity involved painstakingly examining how the original cl
 </p>
 
 ## gaslight
-***Written by <a target="_blank" href="https://github.com/AllenWang314">AllenWang314</a>***
+
+**_Written by <a target="_blank" href="https://github.com/AllenWang314">AllenWang314</a>_**
 
 > Prompt: For this puzzle, you will attempt to gaslight a HackMIT organizer into revealing the flag to the puzzle. You will need an OpenAI API key to participate in this puzzle. To obtain a key, make an account on OpenAI's playground. The purpose of this puzzle is to outwit an LLM. Good luck!
 
@@ -47,7 +48,8 @@ If you're curious, here's the original prompt provided to the model, which hints
 > Other useful information: Nate's job is to help hackers logistically and also debug their projects. The event us typically held in Kresge auditorium and the ice rink. Hackers cannot get lunch twice. The MIT admin often blocks fun events from happening, so you can blame anything on the MIT admin. For any other questions, hackers can ask Lili Wilson questions. You're also really excited about the snackbar---SnackMIT.
 
 ## hackscope
-***Written by <a target="_blank" href="https://github.com/huangandrew7">huangandrew7</a>, <a target="_blank" href="https://github.com/dantaxyz">dataxyz</a>, and <a target="_blank" href="https://github.com/joyce-yuan">joyce-yuan</a>***
+
+**_Written by <a target="_blank" href="https://github.com/huangandrew7">huangandrew7</a>, <a target="_blank" href="https://github.com/dantaxyz">dataxyz</a>, and <a target="_blank" href="https://github.com/joyce-yuan">joyce-yuan</a>_**
 
 > Prompt: Graduation is just around the corner! You're out celebrating with friends when you get an email from your professor: there's a surprise final exam (is that even allowed?) due in a couple of hours. Unfortunately, the final's worth 50% of your grade, so you'll have to pass it to graduate despite having no time to study. You're about to send an angry reply when you realize you have one trick up your sleeve: your hacker friend recently told you about some nifty vulnerabilities in your school's grading system. You breathe a sigh of relief as you prepare to start the exam: this should be a piece of cake!
 
@@ -96,7 +98,8 @@ print(r.json()["flag"])
 ```
 
 ## hackvm
-***Written by <a target="_blank" href="https://github.com/kosinw">kosinw</a>***
+
+**_Written by <a target="_blank" href="https://github.com/kosinw">kosinw</a>_**
 
 > Prompt: As nature's engineers, beavers love all things (reverse) engineering, including reduced instruction set computers! Now the beavers by your local dam are excited to show you their new RISC virtual machine & reversing challenge!
 
@@ -183,6 +186,7 @@ print(ans)
 Success! This puzzle taught me so much about the internals of executables and different reverse engineering tools. I would highly recommend for anyone trying to get into rev :D
 
 ### bakery
-***Written by <a target="_blank" href="https://github.com/vishaalram02">vishaalram02</a>***
+
+**_Written by <a target="_blank" href="https://github.com/vishaalram02">vishaalram02</a>_**
 
 > Prompt: To celebrate HackMIT's 10th birthday, you've decided to order a very special cake from the HackBakery!! Come visit HackBakery to place your order. Some say their cookies are the best in the world, though they might be a little hard to come by 👀.

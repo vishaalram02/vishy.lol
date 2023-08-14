@@ -1,31 +1,23 @@
 <script>
-	import { onMount } from 'svelte';
-	import { marked } from 'marked';
-	import hljs from 'highlight.js/lib/core';
+	import { Marked } from 'marked';
+	import { markedHighlight } from 'marked-highlight';
+	import hljs from 'highlight.js';
 	import 'highlight.js/styles/night-owl.css';
-	import python from 'highlight.js/lib/languages/python';
-	import javascript from 'highlight.js/lib/languages/javascript';
-	import bash from 'highlight.js/lib/languages/bash';
-	import c from 'highlight.js/lib/languages/c';
 
 	export let data;
 
-	hljs.registerLanguage('python', python);
-	hljs.registerLanguage('javascript', javascript);
-	hljs.registerLanguage('bash', bash);
-	hljs.registerLanguage('c', c);
+	const marked = new Marked(
+		markedHighlight({
+			langPrefix: 'language-',
+			highlight(code, lang) {
+				const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+				return hljs.highlight(code, { language }).value;
+			}
+		})
+	);
 
-	marked.setOptions({
-		highlight: function (code, lang) {
-			return hljs.highlight(lang, code).value;
-		}
-	});
-	const url = `/static/posts/${data.pathname.substring(6)}.md?raw`;
-	let post;
-
-	onMount(async () => {
-		post = marked.parse((await import(/* @vite-ignore */ url)).default);
-	});
+	const posts = import.meta.glob('$lib/posts/*.md', { eager: true, as: 'raw' });
+	let post = marked.parse(posts[`/src/lib/posts/${data.post}.md`]);
 </script>
 
 <section class="layout-md">

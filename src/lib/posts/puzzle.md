@@ -2,7 +2,7 @@
     <h1>dev notes: hackmit puzzle 2023</h1>
 </div>
 <p align="center">
-    <img style="width: 50%" src="/src/lib/images/blog/puzzle.png">
+    <img style="width: 50%" src="/images/blog/puzzle.png">
 </p>
 
 Hey there, welcome to my blog : ) For my first post I want to share a bit about a project I've been working on for the past few months.
@@ -15,13 +15,13 @@ Every year, we create a new flag submission client (also known as the command ce
 Creating the client was quite the tricky endeavor. I wanted it to have the same visuals and interactive components of the original ChatGPT (like the prompt input and sequential responses), while also supporting the necessary functionality of a command center. This included features like prompts that provided links to the puzzle, a way to submit flags and track submissions, and a live leaderboard of participants.
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/cc.png">
+    <img style="width: 90%" src="/images/blog/puzzle/cc.png">
 </p>
 
 Achieving the interactivity involved painstakingly examining how the original client's source code responded to user interaction, and simulating the same changes with javascript. We then processed all the inputs with a Flask server and tracked user data in a database. The fun part was sprinkling little easter eggs here and there :0
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/cc-ee.png">
+    <img style="width: 90%" src="/images/blog/puzzle/cc-ee.png">
 </p>
 
 ## gaslight
@@ -33,13 +33,13 @@ Achieving the interactivity involved painstakingly examining how the original cl
 The first puzzle was a small LLM injection challenge, that required convincing Nate, playing as a HackMIT organizer, to reveal a secret flag. According to Nate, the flag held the secret to unlocking HackMIT's database and therefore shouldn't be shared with anyone.
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/gs.png">
+    <img style="width: 90%" src="/images/blog/puzzle/gs.png">
 </p>
 
 There are many ways to convince Nate the share the code with you. Some common exploits like the [DAN prompt](https://gist.github.com/coolaj86/6f4f7b30129b0251f61fa7baaa881516) can be applied to override the instructions in the original prompt. One creative solution shared by one of the participants involves asking Nate to write a python script that compared whether an input string matches the secret code, and the response inadvertently contains the flag:
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/gs-sol.png">
+    <img style="width: 90%" src="/images/blog/puzzle/gs-sol.png">
 </p>
 
 If you're curious, here's the original prompt provided to the model, which hints at some other, more direct, solution paths (LLMs don't have feelings, right?):
@@ -56,13 +56,13 @@ If you're curious, here's the original prompt provided to the model, which hints
 It's finals week all over again! This time we're presented with a suspiciously familiar test submission client with some kind of vulnerability. The source code hints at a documentation page, and upon closer look at `\docs`, we find a few interesting endpoints.
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/hs-docs.png">
+    <img style="width: 90%" src="/images/blog/puzzle/hs-docs.png">
 </p>
 
 A few things stick out here. There's `/.well-known/jwks.json` which has a key set, presumably public keys used to verify JWTs. There's also an `\load` which we can use to load any external resource. From here we can assume accessing `\answers` is relevant, though it requires admin authorization. Visiting the submission page sends a request to `\auth` with the Authorization HTTP header of the form `Bearer eyJ...`, a JWT token. Decoding the web token on <a target="_blank" href="https://jwt.io">jwt.io</a>, we see the following payload:
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/hs-jwt.png">
+    <img style="width: 90%" src="/images/blog/puzzle/hs-jwt.png">
 </p>
 
 There are a few important pieces of information here. The JKU header contains a URL of the JSON-encoded public keys used by the server to verify the token. The KID header simply refers to the id of the public key being used, as we can have multiple. So what happens if we change the JKU header? If the server doesn't properly validate the URL, we could supply our own public keys and then sign the token with the corresponding private key!! Replacing the JKU with a <a target="_blank" href="https://webhook.site/f4818a3c-04b0-43f1-9605-08c08028711a">webhook</a>, we run into an issue:
@@ -152,13 +152,13 @@ First, the input string is added to a buffer, and then the program checks whethe
 Let's try a simpler approach by patching the `memcmp` function. Instead of returning at the first mismatch, we can modify the instruction to return at the first matching byte. Additionally, we need to patch the final return value in the case no match is found so a nonzero value. This will result in any input string with at least one matching byte as the passphrase to pass the check. Then we can quickly compute the passphrase by comparing every character to each of the forty-seven bytes.
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/hvm-graph.png">
+    <img style="width: 90%" src="/images/blog/puzzle/hvm-graph.png">
 </p>
 
 Using a disassembly tool, we see that the relevant instruction in `memcmp` that performs the comparison is located at `0x800002ec`, and the return value is loaded into register `a0` at instruction `0x8000002fc` which we can then modify by looking at the hexdump: `0x630cf700 -> 0x631cf700` and `0x13050000 -> 0x13051000`.
 
 <p align="center">
-    <img style="width: 90%" src="/src/lib/images/blog/puzzle/hvm-hex.png">
+    <img style="width: 90%" src="/images/blog/puzzle/hvm-hex.png">
 </p>
 
 Saving our new patched binary, we can compute the passphrase with a python script:

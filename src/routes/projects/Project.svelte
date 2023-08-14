@@ -1,6 +1,5 @@
 <script>
 	export let data;
-	export let image;
 </script>
 
 <div class="grid grid-cols-2 my-2 sm:grid-cols-1">
@@ -26,6 +25,6 @@
 		</a>
 	</div>
 	<div class="p-5">
-		<img class="rounded-md" alt={data.name} src={image} />
+		<img class="rounded-md" alt={data.name} src="/images/projects/{data.name}.png" />
 	</div>
 </div>

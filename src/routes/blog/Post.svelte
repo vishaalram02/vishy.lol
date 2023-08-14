@@ -1,6 +1,5 @@
 <script>
 	export let data;
-	export let image;
 </script>
 
 <a href="/blog/{data.name}">
@@ -27,7 +26,7 @@
 			<p class="text-lg text-neutral-500 mb-2">{@html data.description}</p>
 		</div>
 		<div class="p-5">
-			<img class="rounded-md" alt={data.name} src={image} />
+			<img class="rounded-md" alt={data.name} src="/images/blog/{data.name}.png" />
 		</div>
 	</div>
 </a>

@@ -1,7 +1,5 @@
 <script>
 	import Post from './Post.svelte';
-
-	const images = import.meta.glob('$lib/images/blog/*.png', { eager: true });
 	const Posts = [
 		{
 			name: 'puzzle',
@@ -18,7 +16,7 @@
 <section class="layout-md">
 	<hr />
 	{#each Posts as data (data)}
-		<Post {data} image={images[`/src/lib/images/blog/${data.name}.png`]?.default} />
+		<Post {data} />
 		<hr />
 	{/each}
 </section>

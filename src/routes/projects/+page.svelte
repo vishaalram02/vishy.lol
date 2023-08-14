@@ -1,7 +1,6 @@
 <script>
 	import Project from './Project.svelte';
 
-	const images = import.meta.glob('$lib/images/projects/*.png', { eager: true });
 	const projects = [
 		{
 			name: 'vishy.lol',
@@ -45,7 +44,7 @@
 <section class="layout-md">
 	<hr />
 	{#each projects as data (data)}
-		<Project {data} image={images[`/src/lib/images/projects/${data.name}.png`]?.default} />
+		<Project {data} />
 		<hr />
 	{/each}
 </section>

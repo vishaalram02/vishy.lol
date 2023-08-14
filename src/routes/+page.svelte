@@ -1,7 +1,3 @@
-<script>
-	import profile from '$lib/images/blog/vishy.png';
-</script>
-
 <div class="layout-md text-lg">
 	<div class="grid grid-cols-3 sm:grid-cols-1 sm:space-y-3">
 		<div class="col-span-2 mr-4 text-neutral-600 font-mabry sm:col-span-1">
@@ -23,7 +19,7 @@
 			</p>
 		</div>
 		<div>
-			<img class="rounded-xl" alt="vishy" src={profile} />
+			<img class="rounded-xl" alt="vishy" src={'/images/blog/vishy.png'} />
 		</div>
 	</div>
 </div>

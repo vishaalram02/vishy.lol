@@ -1,11 +1,21 @@
 <script>
 	import { Marked } from 'marked';
 	import { markedHighlight } from 'marked-highlight';
-	import hljs from 'highlight.js';
+	import hljs from 'highlight.js/lib/core';
+	import python from 'highlight.js/lib/languages/python';
+	import javascript from 'highlight.js/lib/languages/javascript';
+	import bash from 'highlight.js/lib/languages/bash';
+	import c from 'highlight.js/lib/languages/c';
+	import plaintext from 'highlight.js/lib/languages/plaintext';
 	import 'highlight.js/styles/night-owl.css';
 
 	export let data;
 
+	hljs.registerLanguage('python', python);
+	hljs.registerLanguage('javascript', javascript);
+	hljs.registerLanguage('bash', bash);
+	hljs.registerLanguage('c', c);
+	hljs.registerLanguage('plaintext', plaintext);
 	const marked = new Marked(
 		markedHighlight({
 			langPrefix: 'language-',

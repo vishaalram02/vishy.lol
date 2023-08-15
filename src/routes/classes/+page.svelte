@@ -36,8 +36,9 @@
 
 <section class="layout-md">
 	<p class="text-2xl mb-5">some of my favorite classes! 📚</p>
+	<hr>
 	{#each courses as subject (subject)}
-		<div class="rounded-lg hover:bg-amber-100 p-2 transition-colors">
+		<div class="hover:bg-amber-100 transition-transform hover:scale-105 p-4 rounded-lg transition-colors">
 			<p class="text-xl">{subject.name}</p>
 			<div class="ml-10 text-lg">
 				<ul class="list-disc">
@@ -50,5 +51,6 @@
 				</ul>
 			</div>
 		</div>
+		<hr>
 	{/each}
 </section>

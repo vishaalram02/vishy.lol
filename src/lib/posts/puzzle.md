@@ -199,7 +199,7 @@ In this puzzle, we have a little cake ordering interface with some text inputs a
 
 The trick here is to examine the image input more closely. Although the client only accepts png uploads, testing the upload endpoint reveals that the server accepts any image mimetype, including pngs, jpgs, gifs, and most importantly, svgs. Since svgs are an XML-based file format, we can embed script tags to insert our own javascript. However, the reason why the javascript will actually execute on the page is that they are rendered in a data URL with object tags. Therefore, the raw XML will be embedded in the page, causing the script to execute. 
 
-Crafting our svg, we obtain the cookie from the main document with `window.parent.document.cookie` and then send the cookie to an external webhook. Once Vishy visits the page, the cookie data, containing the flag, is sent to our webhook.
+Crafting our svg, we obtain the cookie from the main document with `window.parent.document.cookie` and then send the cookie to an external webhook. Once Vishy visits the page, the cookie data containing the flag is sent to our webhook.
 
 ```html
 <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" x="0.00000000" y="0.00000000" width="500.00000" height="500.00000" id="svg2">

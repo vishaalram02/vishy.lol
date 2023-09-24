@@ -3,8 +3,8 @@
 		{
 			name: '💻 Computer Science',
 			classes: [
-        { name: '[Fall 23] Operating Systems Engineering', number: '6.1810'},
-        { name: '[Fall 23] Software Performance Engineering', number: '6.1060'},
+				{ name: '[Fall 23] Operating Systems Engineering', number: '6.1810' },
+				{ name: '[Fall 23] Software Performance Engineering', number: '6.1060' },
 				{ name: 'Distributed Systems', number: '6.5800' },
 				{ name: 'Computer Systems Engineering', number: '6.1800' },
 				{ name: 'Assembly and C', number: '6.1900' },
@@ -36,9 +36,11 @@
 
 <section class="layout-md">
 	<p class="text-2xl mb-5">some of my favorite classes! 📚</p>
-	<hr>
+	<hr />
 	{#each courses as subject (subject)}
-		<div class="hover:bg-amber-100 transition-transform hover:scale-105 p-4 rounded-lg transition-colors">
+		<div
+			class="hover:bg-amber-100 transition-transform hover:scale-105 p-4 rounded-lg transition-colors"
+		>
 			<p class="text-xl">{subject.name}</p>
 			<div class="ml-10 text-lg">
 				<ul class="list-disc">
@@ -51,6 +53,6 @@
 				</ul>
 			</div>
 		</div>
-		<hr>
+		<hr />
 	{/each}
 </section>

@@ -2,7 +2,7 @@
 	import { Marked } from 'marked';
 	import { markedHighlight } from 'marked-highlight';
 	import hljs from 'highlight.js/lib/core';
-  import xml from 'highlight.js/lib/languages/xml';
+	import xml from 'highlight.js/lib/languages/xml';
 	import python from 'highlight.js/lib/languages/python';
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import bash from 'highlight.js/lib/languages/bash';
@@ -12,7 +12,7 @@
 
 	export let data;
 
-  hljs.registerLanguage('xml', xml);
+	hljs.registerLanguage('xml', xml);
 	hljs.registerLanguage('python', python);
 	hljs.registerLanguage('javascript', javascript);
 	hljs.registerLanguage('bash', bash);

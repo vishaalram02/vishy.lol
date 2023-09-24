@@ -18,7 +18,9 @@
 			<p class="text-md text-neutral-500">{data.date}</p>
 			<div class="flex space-x-1 mt-1 mb-2">
 				{#each data.tags as tag (tag)}
-					<div class="bg-amber-100 group-hover:bg-amber-200 transition-colors text-sm rounded-xl px-2 py-px">
+					<div
+						class="bg-amber-100 group-hover:bg-amber-200 transition-colors text-sm rounded-xl px-2 py-px"
+					>
 						{tag}
 					</div>
 				{/each}

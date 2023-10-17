@@ -3,8 +3,8 @@
 		{
 			name: '💻 Computer Science',
 			classes: [
-				{ name: '[Fall 23] Operating Systems Engineering', number: '6.1810' },
-				{ name: '[Fall 23] Software Performance Engineering', number: '6.1060' },
+				{ name: 'Operating Systems Engineering', number: '6.1810' },
+				{ name: 'Software Performance Engineering', number: '6.1060' },
 				{ name: 'Distributed Systems', number: '6.5800' },
 				{ name: 'Computer Systems Engineering', number: '6.1800' },
 				{ name: 'Assembly and C', number: '6.1900' },
@@ -28,7 +28,8 @@
 				{ name: 'Chinese Calligraphy', number: '21G.111' },
 				{ name: 'Infant and Early Childhood Cognition', number: '9.85' },
 				{ name: 'Computational Psycholinguistics', number: '9.19' },
-				{ name: 'Introduction to Western Music', number: '21M.011' }
+				{ name: 'Introduction to Western Music', number: '21M.011' },
+				{ name: 'Dynastic China', number: '21H.151'}
 			]
 		}
 	];

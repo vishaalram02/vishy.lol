@@ -2,7 +2,7 @@
 	<div class="grid grid-cols-3 sm:grid-cols-1 sm:space-y-3">
 		<div class="col-span-2 mr-4 text-neutral-600 font-mabry sm:col-span-1">
 			<p>
-				👋 I'm a <a href="/classes"><em>junior</em></a> at MIT studying mathematics and computer science.
+				👋 I'm a <a href="classes"><em>junior</em></a> at MIT studying mathematics and computer science.
 				I'm interested in cloud infrastructure and developing reliable and secure computer systems.
 			</p>
 			<p>
@@ -18,8 +18,8 @@
 				>, helping ESG companies track their emissions data.
 			</p>
 			<p>
-				🍔 Some <a href="/projects"><em>things</em></a> I've worked on and some
-				<a href="/blog"><em>bits</em></a> of my life.
+				🍔 Some <a href="projects"><em>things</em></a> I've worked on and some
+				<a href="blog"><em>bits</em></a> of my life.
 			</p>
 			<p class="mt-3">
 				⛰️ Also in my free time, I enjoy <a href="https://www.strava.com/athletes/107723971"

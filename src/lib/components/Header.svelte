@@ -53,7 +53,7 @@
 	}
 </script>
 
-<header class="layout-md mb-10" data-sveltekit-noscroll>
+<header class="layout-md mb-5" data-sveltekit-noscroll>
 	<a href="/" class="text-4xl font-overfont group"
 		>hi, i'm vishy <span
 			class="inline-block"

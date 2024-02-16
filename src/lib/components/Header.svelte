@@ -60,7 +60,7 @@
 			style="transform: rotate({rotation}deg); transition: transform 1.2s ease-in-out">🐧</span
 		></a
 	>
-	<div class="flex justify-between items-start my-4">
+	<!-- <div class="flex justify-between items-start my-4">
 		<nav class="flex text-neutral-500 justify-end space-x-6 text-lg py-0.5">
 			{#each links as link (link)}
 				<a
@@ -83,5 +83,5 @@
 				</a>
 			{/each}
 		</div>
-	</div>
+	</div> -->
 </header>

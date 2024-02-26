@@ -3,6 +3,16 @@
 
 	const projects = [
 		{
+			name: 'pigeon',
+			emoji: '🐦',
+			tags: ['React', 'Flask', 'Redis'],
+			header: 'A RAG Email Assistant! (HackHarvard 2023)',
+			description:
+				'A fully functional email client built to automate email workflows. Procures relevant documents from a Redis vector database to generate responses. Built with and currently maintained by the HackMIT dev team.',
+			link: 'https://pigeon.hackmit.org',
+			source: 'https://github.com/techx/pigeon'
+		},
+		{
 			name: 'qstack',
 			emoji: '✔️',
 			tags: ['React/TS', 'Flask', 'Auth0'],
@@ -38,7 +48,7 @@
 			tags: ['React/JS', 'Express', 'MongoDB', 'SocketIO'],
 			header: 'Minesweeper live !! (MIT Weblab 2022)',
 			description:
-				"The first webapp I've worked on : ) A realtime multiplayer minesweeper app that allows you to create game lobbies and race against your friends on the same board.",
+				'My first webapp : ) A realtime multiplayer minesweeper app that allows you to create game lobbies and race against your friends on the same board.',
 			link: 'https://multimine.vishy.lol',
 			source: 'https://github.com/vishaalram02/multimine'
 		},

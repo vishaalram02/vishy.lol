@@ -220,3 +220,5 @@ Crafting our svg, we obtain the cookie from the main document with `window.paren
 	</script>
 </svg>
 ```
+
+Hope you all enjoyed my puzzle! This was my first time writing my own puzzle or running a CTF in general so I learned so much about web security and exploitation along the way. I hope to continue to write puzzles in the future and see you all at Puzzle 2024!

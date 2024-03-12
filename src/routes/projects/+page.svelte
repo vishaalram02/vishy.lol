@@ -3,6 +3,15 @@
 
 	const projects = [
 		{
+			name: 'juzi',
+			emoji: '🍊',
+			tags: ['SvelteKit/TS', 'Redis', 'Vercel'],
+			header: 'An LLM Chinese sentence parser!',
+			description: 'A serverless webapp designed to help you break down Chinese sentences into grammatical components. Each component in the syntax tree presents its own meaning in context to help you understand the overall meaning and structure of the sentence.',
+			link: 'https://juzi.vishy.lol',
+			source: 'https://github.com/vishaalram02/juzi'
+		},
+		{
 			name: 'pigeon',
 			emoji: '🐦',
 			tags: ['React', 'Flask', 'Redis'],
@@ -25,7 +34,7 @@
 		{
 			name: 'vishy.lol',
 			emoji: '🐧',
-			tags: ['Sveltekit/JS', 'TailwindCSS'],
+			tags: ['SvelteKit/JS', 'TailwindCSS'],
 			header: 'This website ‼️',
 			description:
 				'Woah where am I? My lightweight personal website powered by Svelte! No unnecessary packages and plugins needed :0',
@@ -66,6 +75,7 @@
 </script>
 
 <section class="layout-md">
+	<p class="text-2xl mb-5">Here are some projects I've worked on for fun or at hackathons! 💻</p>
 	<hr />
 	{#each projects as data (data)}
 		<Project {data} />

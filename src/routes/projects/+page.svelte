@@ -3,11 +3,22 @@
 
 	const projects = [
 		{
+			name: 'decafe',
+			emoji: '☕',
+			tags: ['NextJS/TS', 'Flask'],
+			header: 'My decaf compiler IR visualizer!',
+			description:
+				'A control flow graph visualizer for my 6.110 compiler project! Dynamically view the effect of optimizations on the intermediate representation and run the code in a virtual environment.',
+			link: 'https://decafe.vishy.lol',
+			source: 'https://github.com/vishaalram02/decafe'
+		},
+		{
 			name: 'juzi',
 			emoji: '🍊',
 			tags: ['SvelteKit/TS', 'Redis', 'Vercel'],
 			header: 'An LLM Chinese sentence parser!',
-			description: 'A serverless webapp designed to help you break down Chinese sentences into grammatical components. Each component in the syntax tree presents its own meaning in context to help you understand the overall meaning and structure of the sentence.',
+			description:
+				'A serverless webapp designed to help you break down Chinese sentences into grammatical components. Each component in the syntax tree presents its own meaning in context to help you understand the overall meaning and structure of the sentence.',
 			link: 'https://juzi.vishy.lol',
 			source: 'https://github.com/vishaalram02/juzi'
 		},
@@ -60,16 +71,6 @@
 				'My first webapp : ) A realtime multiplayer minesweeper app that allows you to create game lobbies and race against your friends on the same board.',
 			link: 'https://multimine.vishy.lol',
 			source: 'https://github.com/vishaalram02/multimine'
-		},
-		{
-			name: 'bakery',
-			emoji: '🧑‍🍳',
-			tags: ['Express'],
-			header: "Vishy's cookies? (HackMIT Puzzle 2023)",
-			description:
-				"A simple cross site scripting (XSS) challenge. Exploit a vulnerability in image upload to acquire Vishy's cookies! Submissions are automatically verified with a headless chromium browser.",
-			link: 'https://bakery.hackxgpt.com/u/vishaalram02_7abee6',
-			source: 'https://github.com/vishaalram02/bakery'
 		}
 	];
 </script>

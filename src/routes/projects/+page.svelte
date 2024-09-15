@@ -39,7 +39,7 @@
 			header: 'A hackathon helpqueue platform!',
 			description:
 				'A ticket submission platform made for HackMIT 2023. Allows hackers to create tickets with technical issues which mentors can claim and provide assistance.',
-			link: 'https://qstack.hackmit.org',
+			link: 'https://help.hackmit.org',
 			source: 'https://github.com/techx/qstack'
 		},
 		{

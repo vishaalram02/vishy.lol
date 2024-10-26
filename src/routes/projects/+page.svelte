@@ -13,6 +13,15 @@
 			source: 'https://github.com/vishaalram02/decafe'
 		},
 		{
+			name: 'seamless-chat',
+			emoji: '🌎',
+			tags: ['Modal', 'FastAPI', 'SvelteKit/TS'],
+			header: 'A multilingual chat room!',
+			description: "A distributed translation app with with real-time speech-to-speech translation powered by SeamlessM4T-V2. Deployed severless on <a href='https://modal.com' target='_blank'>Modal</a> with H100 GPUs.",
+			link: 'https://seamless.modal.chat',
+			source: 'https://github.com/modal-labs/seamless-chat'
+		},
+		{
 			name: 'juzi',
 			emoji: '🍊',
 			tags: ['SvelteKit/TS', 'Redis', 'Vercel'],
@@ -41,6 +50,16 @@
 				'A ticket submission platform made for HackMIT 2023. Allows hackers to create tickets with technical issues which mentors can claim and provide assistance.',
 			link: 'https://help.hackmit.org',
 			source: 'https://github.com/techx/qstack'
+		},
+		{
+			name: 'evil-connections',
+			emoji: '😈',
+			tags: ['SvelteKit/TS'],
+			header: '😈 very evil 😈',
+			description:
+				'A small puzzle for HackMIT Puzzle 2024 inspiried by NYT Games. Find all 8 categories before you run out of guesses!',
+			link: 'https://connections.vishy.lol',
+			source: 'https://github.com/vishaalram02/connections'
 		},
 		{
 			name: 'vishy.lol',

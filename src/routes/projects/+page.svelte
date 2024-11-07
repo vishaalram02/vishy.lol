@@ -17,7 +17,7 @@
 			emoji: '🌎',
 			tags: ['Modal', 'FastAPI', 'SvelteKit/TS'],
 			header: 'A multilingual chat room!',
-			description: "A distributed translation app with with real-time speech-to-speech translation powered by SeamlessM4T-V2. Deployed severless on <a href='https://modal.com' target='_blank'>Modal</a> with H100 GPUs.",
+			description: "A distributed translation app with with real-time speech-to-speech translation powered by SeamlessM4T-V2. Deployed severless on <a href='https://modal.com' target='_blank'><i>Modal</i></a> with H100 GPUs. Check out the <a href='https://modal.com/docs/examples/seamless-chat' target='_blank'><i>blog post</i></a>.",
 			link: 'https://seamless.modal.chat',
 			source: 'https://github.com/modal-labs/seamless-chat'
 		},

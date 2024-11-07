@@ -26,13 +26,13 @@
 		{
 			name: '🎨 Humanities',
 			classes: [
-				{ name: 'Chinese I-VI', number: '21G.101-21G.106' },
 				{ name: 'Chinese Calligraphy', number: '21G.111' },
 				{ name: 'IAP Chinese Abroad', number: '21G.S04' },
 				{ name: 'Infant and Early Childhood Cognition', number: '9.85' },
 				{ name: 'Computational Psycholinguistics', number: '9.19' },
 				{ name: 'Introduction to Western Music', number: '21M.011' },
-				{ name: 'Dynastic China', number: '21H.151' }
+				{ name: 'Dynastic China', number: '21H.151' },
+				{ name: 'Chinese VI', number: '21G.106' }
 			]
 		}
 	];
